@@ -26,6 +26,9 @@ Facebook小游戏SDK中对于广告的使用有较多的误导，所以优先对
 * In App Purchase 内购
 * others
 
+## Cocos Creator 2.x demo
+> [Cocos Creator 2.x demo](FBCocosDemo/README.md)
+
 # Contact 联系
 * https://xmanyou.com
 * https://www.minigame.vip
