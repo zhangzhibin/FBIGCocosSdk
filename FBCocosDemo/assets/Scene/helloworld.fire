@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        496.2325439453125,
+        514.4190673828125,
         0,
         0,
         0,
@@ -387,20 +387,20 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 600,
-      "height": 200
+      "width": 351,
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
+      "x": 0.33497303022087044,
+      "y": 0.565439539951106
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float32Array",
       "array": [
-        0,
-        428.6470031738281,
+        -57,
+        411,
         0,
         0,
         0,
@@ -438,16 +438,16 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Hello, World!",
-    "_N$string": "Hello, World!",
+    "_string": "广告测试步骤: \n1. 添加广告id\n2. 加载\n3. 检查状态\n4. 播放\n5. 隐藏",
+    "_N$string": "广告测试步骤: \n1. 添加广告id\n2. 加载\n3. 检查状态\n4. 播放\n5. 隐藏",
     "_fontSize": 20,
-    "_lineHeight": 60,
+    "_lineHeight": 30,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_N$horizontalAlign": 1,
+    "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 2,

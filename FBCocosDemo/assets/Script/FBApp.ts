@@ -147,11 +147,22 @@ export default class FBApp extends cc.Component {
     }
 
     public addInterstitial(){
-        FBAdManager.addInterstitial(FB_ADS.INTERSTITIAL);
+        try{
+            let total = FBAdManager.addInterstitial(FB_ADS.INTERSTITIAL, 3);
+            this.label.string = "添加插屏广告，总数: " + total;
+        }catch(e){
+            this.label.string = "添加插屏广告，错误: " + e.message;
+        }
+
     }
 
     public addRewardedVideo(){
-        FBAdManager.addRewardedVideo(FB_ADS.REWARDED_VIDEO);
+        try{
+            let total = FBAdManager.addRewardedVideo(FB_ADS.REWARDED_VIDEO, 3);
+            this.label.string = "添加激励视频广告，总数: " + total;
+        }catch(e){
+            this.label.string = "添加激励视频广告，错误: " + e.message;
+        }
     }
 
     public initAds(){
@@ -172,7 +183,7 @@ export default class FBApp extends cc.Component {
     }
 
     public isRewardVideoReady(){
-        this.label.string = "激励视频广告状态: " + FBAdManager.isInterstitialAdReady();
+        this.label.string = "激励视频广告状态: " + FBAdManager.isRewardedVideoReady();
     }
 
     public showRewardVideo(){
