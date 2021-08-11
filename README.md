@@ -83,3 +83,4 @@ const FB_AD_DELAY_FOR_FIRST_REWARDED_VIDEO = 0; // 首个激励视频广告延�
 * https://xmanyou.com
 * https://www.minigame.vip
 * zhangzhibin@minigame.vip
+* zhangzhibin@gmail.com
