@@ -12,12 +12,12 @@
 * 3. isXXXReady() 检查是否可以播放
 * 3.1. 插屏  isInterstitialAdReady
 * 3.2. 激励视频 isRewardedVideoReady
-* 3.3. banner
+* 3.3. banner isBannerReady
 
 * 4. showXXXAsync() 播放广告，并检查播放状态
 * 4.1. 插屏 showInterstitialAd
 * 4.2. 激励视频 showRewardedVideo
-* 4.3. banner isBannerReady
+* 4.3. banner showBannerAsync
 
 * 5. hideXXXAsync() 隐藏广告（banner专属)
 * 5.1. 插屏 不需要
