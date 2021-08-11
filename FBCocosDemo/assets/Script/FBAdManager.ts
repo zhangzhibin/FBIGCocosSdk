@@ -381,10 +381,11 @@ abstract class FBStatefulAdUnit extends FBAdUnitBase{
                 this.increaseErrorCounter();
                 this._state = FB_AD_STATE.NEW;
     
-                // [6] TODO: 加载失败，自动重新加载
-                // TODO: 应该适当延迟               
-                console.log("延迟" + FB_AUTO_RELOAD_DELAY + "秒后, 自动重新加载: " + this.getInfo());
-                waitTimeSecond(FB_AUTO_RELOAD_DELAY, this.loadAsync.bind(this));
+                // [6] 加载失败，自动重新加载
+                // 适当延迟
+                let delayTime = 10 * this._errorCounter + FB_AUTO_RELOAD_DELAY;
+                console.log("延迟" + delayTime + "秒后, 自动重新加载: " + this.getInfo());
+                waitTimeSecond(delayTime, this.loadAsync.bind(this));
            }
 
             throw e;
@@ -550,7 +551,7 @@ class FBBannerUnit extends FBAdUnitBase{
 
 export default class FBAdManager{
     public static getVersion(){
-        return "1.0.1";
+        return "1.0.2";
     }
 
     private static _interstitialAds:Array<FBStatefulAdUnit> = [];
@@ -667,19 +668,29 @@ export default class FBAdManager{
         console.log("FBAdManager Version: " + this.getVersion());
         console.log("初始化广告队列");
         // 两次加载间间隔N秒
-        for(let i=0;i<this._interstitialAds.length;i++){
-            const adUnit = this._interstitialAds[i];
-            if(i>0){
-                await waitTimeSecond(0.1);
-            }           
-            adUnit.loadAsync();
-        }
+        // 先加载激励视频
         for(let i=0;i<this._rewardedVideos.length;i++){
             const adUnit = this._rewardedVideos[i];
             if(i>0){
                 await waitTimeSecond(0.1);
             }           
-            adUnit.loadAsync();
+            try{
+                await adUnit.loadAsync();
+            }catch(e){
+                
+            }
+        }
+        // 之后加载插屏
+        for(let i=0;i<this._interstitialAds.length;i++){
+            const adUnit = this._interstitialAds[i];
+            if(i>0){
+                await waitTimeSecond(0.1);
+            }           
+            try{
+                await adUnit.loadAsync();
+            }catch(e){
+
+            }
         }
     }
 
